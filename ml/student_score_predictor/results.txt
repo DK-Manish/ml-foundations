@@ -1,0 +1,49 @@
+=======================================================
+     STUDENT SCORE PREDICTOR — RESULTS
+     Run date : 2026-04-13 20:57:13
+=======================================================
+
+DATASET SUMMARY
+   Total rows : 1000
+   Columns    : 9
+   Missing values found : 0
+
+TRAIN / TEST SPLIT
+   Training samples : 800
+   Testing samples  : 200
+
+MODEL
+   Algorithm : Linear Regression
+   Features  : gender, race/ethnicity, parental education, lunch, test preparation
+   Target    : average score (mean of math, reading, writing)
+
+=======================================================
+EVALUATION REPORT
+=======================================================
+   Mean Squared Error (MSE)   : 187.45
+   Root Mean Sq. Error (RMSE) : 13.69
+   On average, predictions are off by ±13.7 points
+
+PREDICTED vs ACTUAL (first 10 test samples)
+       Actual   Predicted      Diff
+   -----------------------------------
+         87.0        71.4     -15.6
+         64.0        66.5      +2.5
+         75.0        68.6      -6.4
+         74.7        56.0     -18.6
+         81.7        77.1      -4.5
+         78.0        60.0     -18.0
+         67.3        64.4      -2.9
+         59.0        75.0     +16.0
+         77.3        58.1     -19.2
+         48.7        70.9     +22.2
+
+=======================================================
+SAMPLE NEW STUDENT PREDICTION
+=======================================================
+   Gender             : Male
+   Race / Ethnicity   : Group C
+   Parental Education : Master's degree
+   Lunch              : Standard
+   Test Preparation   : Completed
+   Predicted Score    : 73.8 / 100

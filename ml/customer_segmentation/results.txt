@@ -1,0 +1,45 @@
+============================================================
+          CUSTOMER SEGMENTATION — RESULTS
+          Run date : 2026-04-13 21:10:01
+============================================================
+
+DATASET SUMMARY
+   Total customers : 200
+   Missing values  : 0
+   Features used   : Annual Income (k$), Spending Score (1-100)
+
+MODEL
+   Algorithm : K-Means Clustering
+   K (clusters) : 5
+   Final inertia : 65.57
+   K chosen via  : Elbow Method
+
+ELBOW METHOD — Inertia per K
+   K        Inertia
+   ------------------
+   1         400.00
+   2         269.69
+   3         157.70
+   4         108.92
+   5          65.57  <-- chosen
+   6          55.06
+   7          44.86
+   8          37.23
+   9          32.39
+   10         29.98
+
+============================================================
+CLUSTER SUMMARY
+============================================================
+Cluster    Count    Avg Age    Avg Income     Avg Spend    % Female     Segment
+------------------------------------------------------------------------------------------
+   0       81       42.7       55.3           49.5         60.0         Low Income, Low Spenders
+   1       39       32.7       86.5           82.1         50.0         High Income, High Spenders
+   2       22       25.3       25.7           79.4         60.0         Low Income, High Spenders
+   3       35       41.1       88.2           17.1         50.0         High Income, Low Spenders
+   4       23       45.2       26.3           20.9         60.0         Low Income, Low Spenders
+
+CHARTS SAVED
+   elbow_chart.png                 — Elbow Method (inertia vs K)
+   clusters_income_vs_spending.png — Scatter plot of clusters
+   pairplot_clusters.png           — Pairplot of all features by cluster

@@ -1,0 +1,53 @@
+=======================================================
+        SPAM EMAIL CLASSIFIER — RESULTS
+        Run date : 2026-04-13 20:54:58
+=======================================================
+
+DATASET SUMMARY
+   Total messages : 5572
+   Ham  (not spam): 4825
+   Spam           : 747
+
+TRAIN / TEST SPLIT
+   Training messages : 4457
+   Testing messages  : 1115
+
+MODEL
+   Algorithm      : Multinomial Naive Bayes
+   Vectorization  : TF-IDF (5,000 features)
+
+=======================================================
+PERFORMANCE METRICS
+=======================================================
+   Accuracy  : 96.05%
+   Precision : 100.00%
+   Recall    : 70.47%
+
+CONFUSION MATRIX
+                  Predicted Ham   Predicted Spam
+   Actual Ham  :            966               0
+   Actual Spam :             44             105
+
+   True Negatives  (ham  correctly identified) : 966
+   False Positives (ham  wrongly flagged spam)  : 0
+   False Negatives (spam that slipped through)  : 44
+   True Positives  (spam correctly caught)      : 105
+
+=======================================================
+TEST WITH NEW UNSEEN MESSAGES
+=======================================================
+
+   Message   : Congratulations! You have won a FREE ticket to Bahamas. Call now!
+   Prediction: SPAM
+
+   Message   : Hey, are we still meeting for lunch tomorrow?
+   Prediction: HAM
+
+   Message   : URGENT: Your account has been compromised. Click here to verify.
+   Prediction: HAM
+
+   Message   : Can you send me the notes from today's class?
+   Prediction: HAM
+
+   Message   : Win cash prizes! Text WIN to 80488 now. Free entry!
+   Prediction: SPAM
