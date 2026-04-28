@@ -1,6 +1,6 @@
 # Student Report Card
 
-A simple CLI-based Python application to generate report cards for students.
+A simple CLI based Python application to generate report cards for students.
 
 ## Features
 

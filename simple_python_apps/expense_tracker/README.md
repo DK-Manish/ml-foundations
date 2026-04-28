@@ -1,6 +1,6 @@
 # Expense Tracker (CLI)
 
-A command-line Python application to track and manage daily expenses.
+A command line Python application to track and manage daily expenses.
 
 ## Features
 

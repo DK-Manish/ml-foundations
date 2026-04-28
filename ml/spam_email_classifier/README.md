@@ -29,26 +29,26 @@ A supervised machine learning program that automatically classifies SMS messages
 
 ### Text Preprocessing
 Raw text messages are noisy and inconsistent. Before training, each message is:
-- **Lowercased** — so "FREE" and "free" are treated as the same word
-- **Stripped of punctuation and special characters** — removes noise that adds no meaning
-- **Whitespace normalised** — multiple spaces collapsed into one
+- **Lowercased** —> so "FREE" and "free" are treated as the same word
+- **Stripped of punctuation and special characters** —> removes noise that adds no meaning
+- **Whitespace normalised** —> multiple spaces collapsed into one
 
 This step reduces vocabulary size and ensures the model focuses on meaningful content.
 
 ### Text Vectorization (TF-IDF)
-ML models cannot read words — they need numbers. TF-IDF (Term Frequency–Inverse Document Frequency) converts each message into a row of numbers, one per word in the vocabulary.
+ML models cannot read words, they need numbers. TF-IDF (Term Frequency–Inverse Document Frequency) converts each message into a row of numbers, one per word in the vocabulary.
 
 - **TF (Term Frequency)**: how often a word appears in this specific message
 - **IDF (Inverse Document Frequency)**: how rare that word is across all messages
 
-A word that appears often in one message but rarely in others (e.g. "prize", "winner", "free") gets a high score — it is a strong signal. Common words like "the" or "is" appear everywhere and get a low score automatically. The top 5,000 most informative words are used as features.
+A word that appears often in one message but rarely in others (e.g. "prize", "winner", "free") gets a high score. It is a strong signal. Common words like "the" or "is" appear everywhere and get a low score automatically. The top 5,000 most informative words are used as features.
 
 ### Model Training (Multinomial Naive Bayes)
 Naive Bayes is the classic algorithm for text classification. It learns the probability of each word appearing in spam messages versus ham messages. At prediction time, it multiplies those probabilities together for every word in the message and picks the more likely class. It is fast, simple, and highly effective for text.
 
 ### Train / Test Split
-- **80% Training set** — the model learns word probabilities from this data
-- **20% Testing set** — held back to measure real-world performance
+- **80% Training set** —> the model learns word probabilities from this data
+- **20% Testing set** —> held back to measure real-world performance
 
 `stratify=y` ensures the spam/ham ratio is the same in both splits, preventing an imbalanced evaluation.
 
@@ -66,7 +66,7 @@ Of all messages the model **labelled as spam**, what fraction were actually spam
 Precision = True Positives / (True Positives + False Positives)
 ```
 
-High precision means few legitimate emails are wrongly flagged — important because losing a real email is costly.
+High precision means few legitimate emails are wrongly flagged. It is important because losing a real email is costly.
 
 ### Recall
 Of all messages that **were actually spam**, what fraction did the model catch?
@@ -129,4 +129,4 @@ No user input required. The program runs fully automatically and prints results 
 | Recall | 70.47% |
 
 **Precision of 100%** means zero legitimate emails were wrongly flagged as spam.
-**Recall of 70.47%** means ~30% of spam slipped through — the model errs on the side of caution to protect real messages.
+**Recall of 70.47%** means ~30% of spam slipped through the model errs on the side of caution to protect real messages.

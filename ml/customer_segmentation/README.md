@@ -1,6 +1,6 @@
 # Customer Segmentation
 
-An unsupervised machine learning program that automatically groups mall customers into distinct segments based on their annual income and spending behaviour. Unlike supervised learning, there are no pre-defined labels — the model discovers the natural groupings hidden within the data on its own.
+An unsupervised machine learning program that automatically groups mall customers into distinct segments based on their annual income and spending behaviour. Unlike supervised learning, there are no pre-defined labels, the model discovers the natural groupings hidden within the data on its own.
 
 ---
 
@@ -37,14 +37,14 @@ K-Means is an unsupervised algorithm that groups data points into K clusters. It
 3. Moving each centroid to the average position of all customers assigned to it
 4. Repeating steps 2–3 until the assignments no longer change
 
-The result is K groups where customers within the same group are as similar as possible, and customers in different groups are as distinct as possible. No labels are needed — the model discovers structure in the data on its own.
+The result is K groups where customers within the same group are as similar as possible, and customers in different groups are as distinct as possible. No labels are needed, the model discovers structure in the data on its own.
 
 ### Elbow Method
 K-Means requires the number of clusters K to be chosen upfront. The Elbow Method helps find the best K by:
 
 - Running K-Means for K = 1 through 10
-- Recording the **inertia** for each K — the total sum of squared distances from each customer to their cluster centre
-- Plotting inertia vs K and looking for the "elbow" — the point where the curve bends and adding more clusters gives diminishing returns
+- Recording the **inertia** for each K, the total sum of squared distances from each customer to their cluster centre
+- Plotting inertia vs K and looking for the "elbow", the point where the curve bends and adding more clusters gives diminishing returns
 
 For this dataset the elbow falls at **K = 5**, meaning 5 clusters capture the main patterns without over-segmenting.
 
@@ -73,8 +73,8 @@ Charts make cluster patterns immediately understandable. Two types of charts are
 | 3 | 35 | $88k | 17.1 | High Income, Low Spenders |
 | 4 | 23 | $26k | 20.9 | Low Income, Low Spenders |
 
-**Cluster 1** (High Income, High Spenders) is the most valuable customer segment — high earners who spend freely.
-**Cluster 3** (High Income, Low Spenders) represents cautious savers — high earners who hold back on spending.
+**Cluster 1** (High Income, High Spenders) is the most valuable customer segment -> high earners who spend freely.
+**Cluster 3** (High Income, Low Spenders) represents cautious savers -> high earners who hold back on spending.
 **Cluster 2** (Low Income, High Spenders) are likely younger impulse buyers spending beyond their means.
 
 ---
@@ -86,7 +86,7 @@ Charts make cluster patterns immediately understandable. Two types of charts are
 | `pandas` | Load and manipulate the CSV dataset as a structured table (DataFrame). Used for reading data, encoding the Gender column, dropping unused columns, and computing per-cluster summaries with `groupby`. |
 | `scikit-learn` (`sklearn`) | Provides `KMeans` for clustering, and `StandardScaler` for feature scaling so that both features contribute equally to distance calculations. |
 | `matplotlib` | The foundational Python plotting library. Used to create and save all charts to PNG files. Set to `Agg` backend so charts are saved to files rather than opening in a window. |
-| `seaborn` | Built on top of Matplotlib — provides higher-level, visually polished statistical charts with less code. Used for the `scatterplot` (clusters) and `pairplot` (all feature combinations). |
+| `seaborn` | Built on top of Matplotlib, provides higher-level, visually polished statistical charts with less code. Used for the `scatterplot` (clusters) and `pairplot` (all feature combinations). |
 | `datetime` | Used to timestamp the `results.txt` output file with the date and time the program was run. |
 
 ---
@@ -98,7 +98,7 @@ Charts make cluster patterns immediately understandable. Two types of charts are
 | `elbow_chart.png` | Inertia vs K plot — shows the elbow bend at K=5 |
 | `clusters_income_vs_spending.png` | Scatter plot of all customers coloured by cluster, with centroids marked |
 | `pairplot_clusters.png` | All feature combinations plotted against each other, coloured by cluster |
-| `results.txt` | Full run report — dataset summary, elbow values, cluster summary table |
+| `results.txt` | Full run report, dataset summary, elbow values, cluster summary table |
 
 ---
 
